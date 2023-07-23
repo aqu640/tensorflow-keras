@@ -1,0 +1,38 @@
+
+# 機器學習
+
+2
+資料清理與轉換
+
+import pandas as pd             # 定義 pandas 並將其縮寫
+import numpy as np              # 定義 numpy 並將其縮寫
+
+# ==== 開啟 test.csv 檔案 ====
+with open('test.csv') as csvfile    # csvFile可以自行命名
+    test = pd.read_csv(csvfile)      # 將檔案建立成 Read 物件
+    A = pd.DataFrame(test)           # 建立一個 DataFrame
+    
+    
+    # ==== info()函數 用於列印 DataFrame 非空值的內存使用情況 ====
+    print((1)n,讀取test.csv檔案n,A,n)   #  A行 有6個non-null (非NaN)
+    print((2)n,顯示每一欄有多少 非 NaNn)    #  B行 有5個non-null (非NaN)
+    print(A.info(),n)                        # C行 有4個non-null (非NaN)
+                                                # D行 有3個non-null (非NaN)
+                                                
+    # ==== dropna() 刪除空值 會直接刪除整欄和整列 ====
+    print((3)n,刪除所有NaN的記錄n)        
+    print(A.dropna(),n)                     # 僅第2列沒有 NAN 所以印出第2列 
+    
+                                              
+    # ==== fillna() 把 NAN 轉換成任意數 ====    
+    B = A.fillna(0)                      # 只能使用在 DataFrame    
+    C = np.array(B)                      # 轉換成 Numpy 陣列
+    D = A.fillna('%.1f'% np.mean(C))     # 只能使用在 Numpy 陣列
+    print((4)n,將 NaN 以平均數填補n,
+          平均數為 0.4n,D) 
+    
+    # 先 read讀取
+    # 建立 DataFrame 才可使用 fillna 把 NAN 換掉
+    # 把 NAN 換 0 去取出平均數 (沒有換 0再取 平均數會是 NAN )
+    # 用 fillna 把 NAN 換成平均數
+
