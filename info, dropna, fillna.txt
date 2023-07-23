@@ -1,7 +1,5 @@
 
 # 機器學習
-
-2
 資料清理與轉換
 
 import pandas as pd             # 定義 pandas 並將其縮寫
