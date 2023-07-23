@@ -1,6 +1,6 @@
 
 """
-# 機器學習 8-1
+# 機器學習 
 利用Matplotlib套件畫出這三個函數
 	Sigmoid函數
 	ReLU函數
